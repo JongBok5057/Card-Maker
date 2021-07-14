@@ -67,8 +67,7 @@ const CardAddForm = ({onAdd}) => {
             ref={messageRef} 
             className={styles.textarea} 
             name="message" 
-            placeholder="Message">
-            </textarea>
+            placeholder="Message" />
             <div className={styles.fileInput}>
                 <ImageFileInput />
             </div>
