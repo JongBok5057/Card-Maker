@@ -12,6 +12,7 @@ const CardAddForm = ({FileInput,onAdd}) => {
     const emailRef = useRef();
      const messageRef = useRef();
      const [file, setFile] = useState({fileName:null, fileURL:null});
+     
      const onFileChange = file => {
          setFile({
              fileName: file.name,
@@ -30,7 +31,7 @@ const CardAddForm = ({FileInput,onAdd}) => {
             email: emailRef.current.value || '',
             message: messageRef.current.value || '',
             fileName: file.fileName || '',
-            fileURL: file.file.URL || '',
+            fileURL: file.fileURL || '',
         };
         formRef.current.reset();
         setFile({fileName:null, fileURL:null});
@@ -55,7 +56,7 @@ const CardAddForm = ({FileInput,onAdd}) => {
             <select ref={themeRef} className={styles.select} name="theme" placeholder="Theme">
                 <option placeholder="light">light</option>
                 <option placeholder="dark">dark</option>
-                <option placeholder="colorful ">c olorful</option>
+                <option placeholder="colorful ">colorful</option>
             </select>
             <input
             ref={titleRef} 
@@ -77,7 +78,7 @@ const CardAddForm = ({FileInput,onAdd}) => {
             name="message" 
             placeholder="Message" />
             <div className={styles.fileInput}>
-                <FileInput name={file.fileName}onFileChange={onFileChange}/>
+                <FileInput name={file.fileName} onFileChange={onFileChange}/>
             </div>
             <Button name='Add' onClick={onSubmit}/>
         </form>
